@@ -1,0 +1,51 @@
+﻿namespace IALClient.Infra.ExternalApi.Dto.Main;
+
+public record WarrantyResponseDto
+(
+    bool Active,
+    string Vin,
+    DateTime Inception,
+    string Code,
+    string Ref,
+    string Desc,
+    string Policy,
+    string Providercd,
+    int Months,
+    int Smonth,
+    int Emonth,
+    int Mileage,
+    int Smileage,
+    int Emileage,
+    decimal Cost,
+    decimal Retail,
+    decimal Fund,
+    string Vatcd,
+    string Curcd,
+    string Notes,
+    string Comments,
+    string Userid,
+    DateTime Cdate,
+    string Guid,
+    bool Flag1,
+    DateTime Flagd1,
+    string Flagu1,
+    bool Flag2,
+    DateTime Flagd2,
+    string Flagu2,
+    bool Flag3,
+    DateTime Flagd3,
+    string Flagu3,
+    string Flagm,
+    bool Canceled,
+    DateTime Canceledd,
+    string Canceledu,
+    string Canceledm,
+    bool Goodwill,
+    bool Aftersales,
+    string Refno,
+    string Invoiceno,
+    DateTime Invoiced
+);
+
+
+

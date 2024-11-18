@@ -1,0 +1,35 @@
+﻿namespace IALClient.Infra.ExternalApi.dto.Main;
+
+public record VinmileageResponseDto(
+    bool Active,
+    string Vin,
+    string Jobno,
+    string Claimno,
+    DateTime Datein,
+    string Category,
+    string Subcat,
+    string Summary,
+    int Mileage,
+    string Engine,
+    DateTime Datesale,
+    string Modelcd,
+    string Model,
+    string Baseccode,
+    string Basecolor,
+    string Colorcd,
+    string Color,
+    string Fuel,
+    string Transmiss,
+    string Notes,
+    string Comments,
+    string Userid,
+    DateTime Cdate,
+    string Guid,
+    string Fuelcd,
+    string Transcd,
+    string Group,
+    string Company,
+    string Branch,
+    string Grp
+);
+
