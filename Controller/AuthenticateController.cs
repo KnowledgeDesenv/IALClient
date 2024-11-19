@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IALClient.Controller;
 
-[Route("auth")]
+[Route("authh")]
 [ApiController]
 public class AuthenticateController(AuthenticateService service) : ControllerBase
 {
