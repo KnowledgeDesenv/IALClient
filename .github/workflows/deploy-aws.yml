@@ -26,3 +26,17 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/ialclient:${{ github.sha }}
+
+      - name: Deploy Docker image to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ec2-35-168-10-219.compute-1.amazonaws.com
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.sha }}
+            docker stop manage-people || true
+            docker rm manage-people || true
+            docker run -d -p 80:80 --name manage-people ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.sha }}        
+          
